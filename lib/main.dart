@@ -8,6 +8,62 @@ class XylophoneApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      home: Scaffold(
+        body: Column(
+          children: [
+            TextButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.red)
+                ),
+              child: Text(''),
+            ),
+            TextButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.orange)
+              ),
+              child: Text(''),
+            ),
+            TextButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.yellow)
+              ),
+              child: Text(''),
+            ),
+            TextButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.green)
+              ),
+              child: Text(''),
+            ),
+            TextButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.teal)
+              ),
+              child: Text(''),
+            ),
+            TextButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.blue)
+              ),
+              child: Text(''),
+            ),
+            TextButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.purple)
+              ),
+              child: Text(''),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

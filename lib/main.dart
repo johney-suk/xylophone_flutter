@@ -1,3 +1,4 @@
+import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -6,14 +7,16 @@ void main() {
 class XylophoneApp extends StatelessWidget {
   const XylophoneApp({Key? key}) : super(key: key);
 
-  void _playSound() {
-    print('play sound');
+  void _playSound({required int noteId}) {
+    AudioCache audioCache = AudioCache();
+    audioCache.play('note$noteId.wav');
   }
 
-  Widget _makeKey({Color? color}) {
+
+  Widget _makeKey({required Color color, required int noteId}) {
     return Expanded(
       child: TextButton(
-        onPressed: () { _playSound(); },
+        onPressed: () { _playSound(noteId: noteId); },
         style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(color)
         ),
@@ -29,13 +32,13 @@ class XylophoneApp extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            _makeKey(color : Colors.red),
-            _makeKey(color : Colors.orange),
-            _makeKey(color : Colors.yellow),
-            _makeKey(color : Colors.green),
-            _makeKey(color : Colors.teal),
-            _makeKey(color : Colors.blue),
-            _makeKey(color : Colors.purple),
+            _makeKey(noteId: 1, color : Colors.red),
+            _makeKey(noteId: 2, color : Colors.orange),
+            _makeKey(noteId: 3, color : Colors.yellow),
+            _makeKey(noteId: 4, color : Colors.green),
+            _makeKey(noteId: 5, color : Colors.teal),
+            _makeKey(noteId: 6, color : Colors.blue),
+            _makeKey(noteId: 7, color : Colors.purple),
           ],
         ),
       ),

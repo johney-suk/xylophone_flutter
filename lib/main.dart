@@ -6,61 +6,36 @@ void main() {
 class XylophoneApp extends StatelessWidget {
   const XylophoneApp({Key? key}) : super(key: key);
 
+  void _playSound() {
+    print('play sound');
+  }
+
+  Widget _makeKey({Color? color}) {
+    return Expanded(
+      child: TextButton(
+        onPressed: () { _playSound(); },
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(color)
+        ),
+        child: Text(''),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            TextButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.red)
-                ),
-              child: Text(''),
-            ),
-            TextButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.orange)
-              ),
-              child: Text(''),
-            ),
-            TextButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.yellow)
-              ),
-              child: Text(''),
-            ),
-            TextButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.green)
-              ),
-              child: Text(''),
-            ),
-            TextButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.teal)
-              ),
-              child: Text(''),
-            ),
-            TextButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.blue)
-              ),
-              child: Text(''),
-            ),
-            TextButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.purple)
-              ),
-              child: Text(''),
-            ),
+            _makeKey(color : Colors.red),
+            _makeKey(color : Colors.orange),
+            _makeKey(color : Colors.yellow),
+            _makeKey(color : Colors.green),
+            _makeKey(color : Colors.teal),
+            _makeKey(color : Colors.blue),
+            _makeKey(color : Colors.purple),
           ],
         ),
       ),
